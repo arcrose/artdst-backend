@@ -1,0 +1,16 @@
+image: bradrydzewski/node:0.10
+script:
+  - createdb -h localhost -U postgres dronetest
+  - cd src
+  - npm install -g coffee-script
+  - npm install -g grunt-cli
+  - npm install
+  - NODE_ENV=drone coffee app.coffee&
+  - grunt
+  - killall coffee
+services:
+  - postgres:9.1
+notify:
+  email:
+    recipients:
+      - redwire@riseup.net

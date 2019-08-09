@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>artdst</title>
+</head>
+<body>
+  <% if (error !== null) { %>
+    <div id="error">
+      <h1>Error</h1>
+      <p>
+        <%= error.message %>
+      </p>
+    </div>
+  <% } else { %>
+    <table id="consumers">
+      <tr>
+        <th>ID</th>
+        <th>Full Name</th>
+        <th>Service ID</th>
+        <th>Public Key</th>
+        <th>Email</th>
+        <th>Accepted</th>
+      </tr>
+      <% for (index in consumers) { %>
+        <% var c = consumers[index] %>
+        <tr>
+          <td><%= c.id %></td>
+          <td><%= c.full_name %></td>
+          <td><input type="text" value="<%= c.serviceid %>" id="serviceID" /></td>
+          <td><textarea id="pubkeyArea"><%= c.pubkey %></textarea></td>
+          <td><%= c.email %></td>
+          <td>
+            Allowed
+            <% if (c.accepted) { %>
+              <input type="checkbox" class="allowbox" value="<%= c.id %>" checked="checked" />
+            <% } else { %>
+              <input type="checkbox" class="allowbox" value="<%= c.id %>" />
+            <% } %>
+          </td>
+        </tr>
+      <% } %>
+    </table>
+  <% } %>
+  <script src="/js/consumerdashboard.js"></script>
+</body>
+</html>

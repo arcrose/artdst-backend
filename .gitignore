@@ -1,0 +1,8 @@
+" The backend server running artdst compiled from server.go
+/server
+
+" Any temporary files created by vim.
+*.swp
+
+" Node modules
+src/node_modules
