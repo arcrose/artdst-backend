@@ -15,7 +15,7 @@
     "bluebird": "~2.3.2",
     "orm": "~2.1.19",
     "pg": "~2.6.2",
-    "bcrypt": "~0.8.0",
+    "bcrypt": "~5.0.0",
     "ejs": "~1.0.0",
     "jsonwebtoken": "^1.1.1",
     "superagent": "~0.18.2"
